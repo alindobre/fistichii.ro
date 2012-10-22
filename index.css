@@ -1,0 +1,254 @@
+
+/*
+Butterfly Kids font, code taken from:
+http://fonts.googleapis.com/css?family=Butterfly+Kids
+*/
+@font-face {
+  font-family: 'Butterfly Kids';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Butterfly Kids'), local('ButterflyKids'), url(http://themes.googleusercontent.com/static/fonts/butterflykids/v1/J4NTF5M25htqeTffYImtlaVF-6wXXIN314UpPArUKH4.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Allura';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Allura'), local('Allura-Regular'), url(http://themes.googleusercontent.com/static/fonts/allura/v1/yegWtMg_EIedWF0Fjf0Pdg.woff) format('woff');
+}
+
+/******** clean sticky footer **********/
+
+/****************
+
+Required
+
+****************/
+
+/*
+Here we are going to set not only the body but the html tag to a height of 100%, without the html tag at a height of 100% this wont work */
+
+html, body {
+	height: 100%;
+}
+
+/* We want to clear the default margin the browser applies (if you do not already have a browser reset applied) */
+
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+/*
+
+In this block we are going to do the following: Set the width of the wrapper to 100% (not required but semantically makes sense because the footer is at the same level and is at a width of 100%, also useful if you want a header that is a width of 100%, you would contain the header inside of div#wrapper), Give the wrapper a min-height of 100% (min-height doesn't work well in IE6 and older browsers like it so we are going to next set the height to auto and make sure it has the !important flag so our new browsers don't pick up on the next line). In the next like we are simply using height: 100%, it will act as min height in the older browsers because older browsers allow expanding heights. Then we are going to set a bottom margin to the negative version of the height of the footer. In our case the footer is 41px high, so our bottom margin is -41px.
+
+*/
+
+div#wrapper {
+	width: 100%;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: -41px 0px -41px 0px;
+}
+
+/* The footer wrapper we will simply asign a height, the above block pushes everything down for us. We will also push this div out to a width of 100% */
+
+div#footer_wrapper, div#header_wrapper {
+	width: 100%;
+	height: 41px;
+}
+
+/* The main deal with the content wrapper is we need to set a bottom padding of 41px to counteract the -41px margin we set above. We are also setting a width of 100% */
+
+div#content_wrapper {
+	width: 100%;
+	padding: 41px 0px 41px 0px;
+}
+
+/****************
+
+Required in certain cases
+
+****************/
+
+/* Use the next two below if you have all of your content in a centered containing div, in our case the div is 942px wide. If not, disregard the following two blocks */
+
+/* When the content is scrolled horizontally, we will want to set a min-width on the footer_wrapper and the content_wrapper. The min-width should be the width of the container (see the next block below). Without this there will be a gap of empty space on the right side. Min-width will work in older versions of IE if you have a width set above, in our case we have a width of 100% set. */
+
+div#footer_wrapper, div#content_wrapper, div#header_wrapper {
+	min-width: 942px;
+}
+
+/* Here we are going to set the width of our container for the content. We are also going to center the container by using the common margin: 0px auto */
+
+div#footer_inner_wrapper, div#content_inner_wrapper, div#header_inner_wrapper {
+	width: 942px;
+	margin: 0px auto;
+}
+
+/****************
+
+NOT Required (just there to make this look a little prettier)
+
+****************/
+
+body {
+	font-family: Helvetica, Arial, Verdana;
+	font-size: 90%;
+}
+
+div#footer_wrapper, div#header_wrapper {
+	background: #000;
+}
+
+div#content_inner_wrapper, div#footer_inner_wrapper, div#header_inner_wrapper {
+	text-align: center;
+}
+
+div#content_inner_wrapper {
+	background: #e9e9e9;
+/*	height: 400px; enabling this from the original css, will cause the footer to be written over the content, when the content is longer to cause scroll */
+}
+
+div#footer_inner_wrapper, div#header_inner_wrapper {
+	color: #ffffff;
+}
+
+/****** alin ******/
+
+div#wrapper {
+	margin-top: -170px; /* header height */
+	margin-bottom: -41px; /* footer height */
+}
+
+div#content_wrapper {
+	padding-top: 170px; /* header height */
+	padding-bottom: 41px; /* footer height */
+}
+
+/* set the header height to 170px and centering it aligned with the content divs */
+div#header_wrapper {
+	height: 170px;
+	width: 990px;
+	margin: 0px auto;
+}
+
+/* set the background as transparent, so that we can later set it to a texture image */
+div#header_wrapper, div#footer_wrapper, div#content_inner_wrapper {
+	background: transparent;
+}
+
+/* set the texture to the backgorund */
+body {
+/*	background:transparent url('fbg3.png') 0 0 repeat;*/
+	background: #f9e9b7;
+}
+
+/* set the font face, size and color for the footer */
+div#footer_inner_wrapper  {
+	font-weight: bold;
+	color: #888;
+	font-size: 13px;
+}
+
+/* Header navigation bar */
+
+h1#logo {
+	float: left;
+	color: #888;
+	font-size: 24px;
+	font-family: 'Allura', cursive;
+	text-align: right;
+	height: 160px;
+}
+
+h1#logo a {
+	background: url(img/fistichii-logo.png) no-repeat;
+	background-position: 100% 95%;
+	display: block;
+	width: 370px;
+	height: 120px;
+}
+
+nav#head_nav {
+	float: right;
+	margin-top: 50px;
+	font-family: 'Allura', cursive;
+	position: absolute;
+	left: 650px;
+}
+
+ul#nav_menu li {
+	display: inline;
+}
+
+ul#nav_menu li a {
+	font-size: 32px;
+	background: url('img/menu1.png') no-repeat center center;
+	background-size: 120px 70px;
+	padding-top: 60px;
+	padding-left: 28px;
+	padding-right: 28px;
+	padding-bottom: 50px;
+	position: relative;
+	top: 20px;
+	margin-bottom: 20px;
+	width: 150px;
+}
+
+ul#nav_menu#nav_menu li a:hover {
+	background: url('img/menu2.png') no-repeat center center;
+	background-size: 120px 70px;
+}
+
+ul#nav_menu li a.sel:hover {
+	background: url('img/menu2.png') no-repeat center center;
+	background-size: 120px 70px;
+	color: #E40584;
+}
+
+ul#nav_menu li a.sel {
+	background: url('img/menu3.png') no-repeat center center;
+	background-size: 120px 70px;
+	color: #11a6e4;
+}
+
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+a:hover {
+	color: #E40584;
+}
+
+div#content_inner_wrapper {
+	text-align: left;
+}
+
+
+/************ rectangular region used in info and contact pages ************/
+div.infobox {
+	background: transparent url('img/bg-pink-leaves.png') 0 0 repeat;
+	padding: 15px;
+	margin: 20px;
+}
+
+div.infobox_text {
+	background: #f9e9b7;
+	min-height: 10px;
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	color: #777;
+	font-size: 18px;
+}
+
+div.center {
+	text-align: center;
+}
+
+div.infobox_text ul li {
+	padding-top: 7px;
+}

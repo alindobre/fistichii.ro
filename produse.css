@@ -1,0 +1,34 @@
+﻿div.product {
+	min-height: 450px;
+}
+
+img.p_image {
+	background: transparent url('bg-pink-leaves.png') 0 0 repeat;
+	padding: 15px;
+	margin: 20px;
+	width: 450px;
+	height: 300px;
+}
+
+p.p_title {
+	padding-top: 100px;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+p.p_descr {
+	font-size: 18px;
+}
+
+p.p_descr, p.p_title {
+	font-family: Arial, sans-serif;
+	color: #444;
+}
+
+img.right {
+	float: right;
+}
+
+img.left {
+	float: left;
+}
